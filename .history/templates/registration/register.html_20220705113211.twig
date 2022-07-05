@@ -1,0 +1,28 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %} Connexion ! {% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block body %}
+<div class="login-form">
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email,{'attr':{'class':'form form-control'}}) }}
+        {{ form_row(registrationForm.firstName,{'attr':{'class':'form form-control'}}) }}
+        {{ form_row(registrationForm.lastName,{'attr':{'class':'form form-control'}}) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password','attr':{'class':'form form-control'}
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
+
+{% block footer %}{% endblock %}
