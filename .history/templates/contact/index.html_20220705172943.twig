@@ -1,0 +1,36 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block body %}
+
+<div class="gtco-section">
+    <div class="gtco-container"> 
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_start(form) }} 
+                    <div class="form-group"> 
+                        {{form}}
+                    </div>
+                    <div class="form-group"> 
+                    </div>
+                    <div class="form-group">  
+                    {{ form_end(form) }} 
+            </div>
+            <div class="col-md-5 col-md-push-1">
+                <div class="gtco-contact-info">
+                    <h3>Our Address</h3>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <ul >
+                        <li class="address">{{contact_address}}</li>
+                        <li class="phone"><a href="">{{contact_phone}}</a></li>
+                        <li class="email"><a href="#">{{contact_email}}</a></li>
+                        <li class="url"><a href="#">www.yoursite.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Contact -->  
+{% endblock %}

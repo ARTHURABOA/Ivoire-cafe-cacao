@@ -1,0 +1,60 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block body %}
+  
+    <div class="gtco-container"> 
+        <div class="row">
+            <div class="col-md-7 mb-5">
+                {{ form_start(form) }} {# le debut de la balise <form> #}
+                
+                <div class="row form-group">  
+                    <div class="col-md-6 mb-3 mb-md-0"> 
+                        {{ form_row(form.firstName, {'attr':{'class':'form-control'}}) }}
+                    </div>   
+                 
+                    <div class="col-md-6">  
+                        {{ form_row(form.lastName, {'attr':{'class':'form-control'}}) }}
+                    </div>
+                </div>
+
+                <div class="row form-group">  
+                    <div class="col-md-12">  
+                        {{ form_row(form.email, {'attr':{'class':'form-control'}}) }} 
+                    </div>
+                </div>
+
+                <div class="row form-group">  
+                    <div class="col-md-12">  
+                        {{ form_row(form.message, {'attr':{'class':'form-control'}}) }} 
+                    </div>
+                </div>
+
+                <div class="row form-group">  
+                    <div class="col-md-12"> 
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </div>
+
+            </div>
+            {{ form_end(form) }} {# la fin de la balise </form> #}
+                
+        </div>  
+        <div class="col-md-5">
+            <div class="gtco-contact-info">
+                <h3>Notre Adresse</h3>
+                <p>Nous sommes situ
+                    <ul >
+                    <li class="address">{{contact_address}}</li>
+                    <li class="phone"><a href="">{{contact_phone}}</a></li>
+                    <li class="email"><a href="#">{{contact_email}}</a></li>
+                    <li class="url"><a href="#">www.yoursite.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+
+<!-- END Contact -->  
+
+{% endblock %}

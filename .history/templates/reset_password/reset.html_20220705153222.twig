@@ -1,0 +1,16 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+{% block navbar %}{% endblock %}
+
+{% block body %}
+<div class="login-form">
+    <h1>Reset your password</h1>
+
+    {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword,{'attr': {'class':'form-control'}}) }}
+        <button class="btn btn-primary btn-block">Reinitialiser mot de passe</button>
+    {{ form_end(resetForm) }}
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}
